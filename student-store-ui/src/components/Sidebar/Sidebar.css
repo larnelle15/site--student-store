@@ -1,3 +1,9 @@
+:root {
+  --dark-blue: #000000; 
+  --accent-orange: #ff9900; 
+  --pure-white: #ffffff;
+}
+
 .Sidebar {
   display: flex;
   flex-direction: column;
@@ -7,34 +13,35 @@
   transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   position: fixed;
   z-index: 100;
-  top: 0px;
+  top: 0;
   height: 100vh;
   padding: 0;
   overflow-y: scroll;
   padding-bottom: 2rem;
   background: var(--dark-blue);
-  border-right: solid 1px white;
+  border-right: solid 1px var(--accent-orange);
 }
+
 .Sidebar.closed {
   width: 60px;
 }
+
 .Sidebar.open {
   width: 575px;
 }
+
 .Sidebar .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
+
 .Sidebar .toggle-button {
   margin-top: 20px;
   transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-/* .Sidebar .toggle-button i {
-  color: white;
-  cursor: pointer;
-} */
+
 .Sidebar .toggle-button.open {
   transform: rotateY(180deg);
 }
@@ -42,5 +49,9 @@
 .Sidebar i {
   margin-right: 10px;
   cursor: pointer;
-  color: white;
+  color: var(--accent-orange);
+}
+
+.Sidebar .wrapper i {
+  color: var(--pure-white);
 }

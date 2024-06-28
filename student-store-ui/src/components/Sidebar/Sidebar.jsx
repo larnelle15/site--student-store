@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import ShoppingCart from "../ShoppingCart/ShoppingCart"
-import logo from "../../assets/codepath.svg"
+import logo from "../../assets/ss.png"
 import "./Sidebar.css"
 
 
@@ -12,7 +12,7 @@ function Sidebar({ cart, isOpen, products, userInfo, setUserInfo, toggleSidebar,
 
         <div className="logo">
             <Link to="/">
-              <img src={logo} alt="codepath logo" />
+              <img src={logo} alt="codepath logo"  style={{width : "60px", height :"60px"}}/> 
             </Link>
         </div>
 

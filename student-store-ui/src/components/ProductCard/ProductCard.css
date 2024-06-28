@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   border: solid 1px var(--border-color);
+  transition: margin-top 0.3s ease;
 }
 .ProductCard .media {
   height: 250px;
@@ -58,7 +59,6 @@
 .ProductCard .actions .buttons {
   width: 80px;
   height: 100%;
-
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -74,4 +74,8 @@
   justify-content: center;
   padding: 5px;
   margin: 10px 5px;
+}
+
+.product-card {
+  margin-top: 20px;
 }

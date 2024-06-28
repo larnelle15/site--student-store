@@ -15,7 +15,7 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState("All Categories");
   const [searchInputValue, setSearchInputValue] = useState("");
-  const [userInfo, setUserInfo] = useState({ name: "", dorm_number: ""});
+  const [userInfo, setUserInfo] = useState({ id: "", email: ""});
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [isFetching, setIsFetching] = useState(false);
@@ -23,7 +23,23 @@ function App() {
   const [error, setError] = useState(null);
   const [order, setOrder] = useState(null);
 
-  // Toggles sidebar
+  useEffect(() => {
+		setIsFetching(true);
+		const fetchProducts = async () => {
+			try {
+				const response = await axios.get("http://localhost:3000/products");
+				const data = response.data;
+				setProducts(data);
+			} catch (error) {
+				setError(error);
+			} finally {
+				setIsFetching(false);
+			}
+		};
+		fetchProducts();
+	}, []);
+
+  // Toggles sidebar // email: userInfo.email,
   const toggleSidebar = () => setSidebarOpen((isOpen) => !isOpen);
 
   // Functions to change state (used for lifting state)
@@ -36,10 +52,61 @@ function App() {
     setSearchInputValue(event.target.value);
   };
 
+  // const handleOnCheckout = async () => {
+  // }
+
   const handleOnCheckout = async () => {
-  }
+		setIsCheckingOut(true);
+		console.log(cart);
+		const newOrder = {
+			customer_id: parseInt(userInfo.id),
+			status: "in progress",
+		};
+		const response = await axios.post(
+			"http://localhost:3000/orders/",
+			newOrder
+		);
+		const data = response.data;
+		console.log(data);
+		setOrder(data);
+
+		for (const [key, value] of Object.entries(cart)) {
+			const orderItem = {
+				product_id: parseInt(key),
+				quantity: parseInt(value),
+			};
+
+			const secondResponse = await axios.post(
+				`http://localhost:3000/orders/${data.order_id}/items`,
+				orderItem
+			);
+
+			console.log(secondResponse);
+		}
+
+		const updatedOrder = {
+			status: "completed",
+		};
+
+		const thirdResponse = await axios.put(
+			`http://localhost:3000/orders/${data.order_id}`,
+			updatedOrder
+		);
+		console.log(thirdResponse);
+
+		const fourthResponse = await axios.get(
+			`http://localhost:3000/orders/${data.order_id}`
+		);
+		const dataSecond = fourthResponse.data;
+		console.log(dataSecond);
+		setOrder(dataSecond);
+
+		setCart({});
+		setIsCheckingOut(false);
+	};
 
 
+  // {order?.status === "completed" ? } 
   return (
     <div className="App">
       <BrowserRouter>

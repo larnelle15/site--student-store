@@ -44,7 +44,12 @@ const addItemToOrder = async (orderItemData, order_id) => {
 };
 
 const createOrder = async (orderData) => {
-  return prisma.order.create({ data: orderData });
+  return prisma.order.create({ data: {
+    customer_id: parseInt(orderData.customer_id),
+    total_price: 0,
+    status: orderData.status,
+},
+ });
 };
 
 const updateOrder = async (order_id, orderData) => {

@@ -66,7 +66,14 @@ Deployed Application (optional): [Student Store Deployed Site](ADD_LINK_HERE)
     </a>
   </div>
 
-
+<div>
+    <a href="https://www.loom.com/share/9939c15953614f958bf2ae5c71fe6b0e">
+      <p>Codestack with prisma schema, crud operations and implementation - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/9939c15953614f958bf2ae5c71fe6b0e">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/9939c15953614f958bf2ae5c71fe6b0e-with-play.gif">
+    </a>
+  </div>
 
 ### Reflection
 

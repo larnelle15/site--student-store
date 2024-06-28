@@ -55,7 +55,6 @@ Deployed Application (optional): [Student Store Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-`ADD_EMBEDDED_CODE_HERE`
 
 <div>
     <a href="https://www.loom.com/share/2ee80e2664f949049b4522dc31954376">
@@ -75,6 +74,24 @@ Deployed Application (optional): [Student Store Deployed Site](ADD_LINK_HERE)
     </a>
   </div>
 
+<div>
+    <a href="https://www.loom.com/share/55fce6c76bfe4d8f9e849679863c9407">
+      <p>Postman examples - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/55fce6c76bfe4d8f9e849679863c9407">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/55fce6c76bfe4d8f9e849679863c9407-with-play.gif">
+    </a>
+  </div>
+
+<div>
+    <a href="https://www.loom.com/share/33b66c5a1d32404ca3fe41160f898172">
+      <p>Prisma studio with database of products, orders and orderItems - Watch Video</p>
+    </a>
+    <a href="https://www.loom.com/share/33b66c5a1d32404ca3fe41160f898172">
+      <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/33b66c5a1d32404ca3fe41160f898172-with-play.gif">
+    </a>
+  </div>
+  
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?

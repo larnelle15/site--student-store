@@ -59,9 +59,10 @@ const updateOrder = async (order_id, orderData) => {
   });
 };
 
-const deleteOrder = async (order_id) => {
+const deleteOrder = async (order_id, orderData) => {
   return prisma.order.delete({
-    where: { order_id: parseInt(order_id) }
+    where: { order_id: parseInt(order_id) },
+    data: orderData, 
   });
 };
 
